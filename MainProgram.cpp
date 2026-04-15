@@ -250,7 +250,7 @@ public:
 
     friend ostream& operator<<(ostream& os, const Student& s) {
 
-        os << "Student(Name: "<< s.name
+        os << "Student("<< s.name
 << ", ID: "<< s.id
 << ", GPA: "<< s.gpa << ")";
 
@@ -274,15 +274,13 @@ public:
 
 Student findBestStudent(const Student& a, const Student& b) {
 
-    if (a.getGpa() > b.getGpa())
-
-    // YOUR CODE HERE
-
-    return a;
-
-  else
+    if (a < b){
 
     return b;
+
+    }
+
+    return a;
 
 }
  
@@ -294,7 +292,7 @@ Student findBestStudent(Student arr[], int size) {
 
    for (int i = 1; i < size; i++) {
 
-        if (arr[i].getGpa() > best.getGpa()) {
+        if (best <  arr[i] ) {
 
             best = arr[i];
 
